@@ -45,6 +45,31 @@
 			path = "GodWay Watch App";
 			sourceTree = "<group>";
 		};
+		A4AD46B02F49C1F9004568A4 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4AD46B72F49C22E004568A4 /* ViewModels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4AD46BB2F49C242004568A4 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4AD46C62F49C286004568A4 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A4AD46CA2F49C29C004568A4 /* Data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +86,11 @@
 		A4AD468F2F49C173004568A4 = {
 			isa = PBXGroup;
 			children = (
+				A4AD46CA2F49C29C004568A4 /* Data */,
+				A4AD46C62F49C286004568A4 /* Services */,
+				A4AD46BB2F49C242004568A4 /* Views */,
+				A4AD46B72F49C22E004568A4 /* ViewModels */,
+				A4AD46B02F49C1F9004568A4 /* Models */,
 				A4AD46A02F49C174004568A4 /* GodWay Watch App */,
 				A4AD46972F49C174004568A4 /* Products */,
 			);
@@ -111,6 +141,11 @@
 			);
 			fileSystemSynchronizedGroups = (
 				A4AD46A02F49C174004568A4 /* GodWay Watch App */,
+				A4AD46B02F49C1F9004568A4 /* Models */,
+				A4AD46B72F49C22E004568A4 /* ViewModels */,
+				A4AD46BB2F49C242004568A4 /* Views */,
+				A4AD46C62F49C286004568A4 /* Services */,
+				A4AD46CA2F49C29C004568A4 /* Data */,
 			);
 			name = "GodWay Watch App";
 			packageProductDependencies = (
