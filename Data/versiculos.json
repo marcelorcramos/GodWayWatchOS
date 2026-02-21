@@ -1,0 +1,58 @@
+{
+    "versiculos": [
+        {
+            "id": "1",
+            "texto": "Buscai ao Senhor enquanto se pode achar, invocai-o enquanto está perto.",
+            "referencia": "Isaías 55:6",
+            "categoria": "Conexão com Deus",
+            "livro": "Isaías",
+            "capitulo": 55,
+            "versiculo": 6
+        },
+        {
+            "id": "2",
+            "texto": "Não andeis ansiosos por coisa alguma; antes em tudo sejam os vossos pedidos conhecidos diante de Deus.",
+            "referencia": "Filipenses 4:6",
+            "categoria": "Ansiedade",
+            "livro": "Filipenses",
+            "capitulo": 4,
+            "versiculo": 6
+        },
+        {
+            "id": "3",
+            "texto": "Tudo posso naquele que me fortalece.",
+            "referencia": "Filipenses 4:13",
+            "categoria": "Força",
+            "livro": "Filipenses",
+            "capitulo": 4,
+            "versiculo": 13
+        },
+        {
+            "id": "4",
+            "texto": "Em tudo dai graças, porque esta é a vontade de Deus em Cristo Jesus para convosco.",
+            "referencia": "1 Tessalonicenses 5:18",
+            "categoria": "Gratidão",
+            "livro": "1 Tessalonicenses",
+            "capitulo": 5,
+            "versiculo": 18
+        },
+        {
+            "id": "5",
+            "texto": "O Senhor é o meu pastor; nada me faltará.",
+            "referencia": "Salmos 23:1",
+            "categoria": "Conexão com Deus",
+            "livro": "Salmos",
+            "capitulo": 23,
+            "versiculo": 1
+        },
+        {
+            "id": "6",
+            "texto": "Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia.",
+            "referencia": "Salmos 46:1",
+            "categoria": "Ansiedade",
+            "livro": "Salmos",
+            "capitulo": 46,
+            "versiculo": 1
+        }
+    ]
+}
