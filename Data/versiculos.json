@@ -53,6 +53,33 @@
             "livro": "Salmos",
             "capitulo": 46,
             "versiculo": 1
+        },
+        {
+            "id": "7",
+            "texto": "Espera no Senhor, anima-te, e ele fortalecerá o teu coração.",
+            "referencia": "Salmos 27:14",
+            "categoria": "Esperança",
+            "livro": "Salmos",
+            "capitulo": 27,
+            "versiculo": 14
+        },
+        {
+            "id": "8",
+            "texto": "Deixo-vos a paz, a minha paz vos dou; não vo-la dou como o mundo a dá.",
+            "referencia": "João 14:27",
+            "categoria": "Paz",
+            "livro": "João",
+            "capitulo": 14,
+            "versiculo": 27
+        },
+        {
+            "id": "9",
+            "texto": "Suportai-vos uns aos outros, perdoai-vos mutuamente.",
+            "referencia": "Colossenses 3:13",
+            "categoria": "Perdão",
+            "livro": "Colossenses",
+            "capitulo": 3,
+            "versiculo": 13
         }
     ]
 }
