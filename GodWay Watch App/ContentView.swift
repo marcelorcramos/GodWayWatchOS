@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = VersiculoViewModel()
     @State private var selectedTab = 0
+    @State private var versiculoDoDia: Versiculo?
     
     // Cores temáticas para cada categoria
     let categoriaCores: [String: Color] = [
@@ -20,34 +21,57 @@ struct ContentView: View {
             // Aba de Categorias
             NavigationStack {
                 ScrollView {
-                    VStack(spacing: 12) {
-                        // Header com gradiente
-                        VStack(spacing: 4) {
-                            Image(systemName: "book.closed.fill")
-                                .font(.largeTitle)
-                                .foregroundStyle(
-                                    LinearGradient(
-                                        colors: [.blue, .purple],
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
+                    VStack(spacing: 16) {
+                        // Header - Título GODWAY
+                        Text("GODWAY")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.blue)
+                            .padding(.top, 8)
+                        
+                        // VERSÍCULO DO DIA
+                        if let versiculo = versiculoDoDia {
+                            VStack(spacing: 8) {
+                                Text("VERSÍCULO DO DIA")
+                                    .font(.caption2)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.gray)
+                                    .tracking(1)
+                                
+                                Text(versiculo.texto)
+                                    .font(.footnote)
+                                    .fontWeight(.medium)
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.primary)
+                                    .padding(.horizontal, 12)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                
+                                Text(versiculo.referencia)
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(categoriaCores[versiculo.categoria] ?? .blue)
+                            }
+                            .padding(.vertical, 12)
+                            .padding(.horizontal, 8)
+                            .frame(maxWidth: .infinity)
+                            .background(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .fill(Color.gray.opacity(0.1))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .stroke(
+                                                LinearGradient(
+                                                    colors: [.blue.opacity(0.3), .purple.opacity(0.3)],
+                                                    startPoint: .topLeading,
+                                                    endPoint: .bottomTrailing
+                                                ),
+                                                lineWidth: 1
+                                            )
                                     )
-                                )
-                            Text("GodWay")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundStyle(
-                                    LinearGradient(
-                                        colors: [.blue, .purple],
-                                        startPoint: .leading,
-                                        endPoint: .trailing
-                                    )
-                                )
-                            Text("Sua paz em cada pulso")
-                                .font(.caption2)
-                                .foregroundColor(.gray)
+                            )
+                            .padding(.horizontal, 8)
+                            .padding(.bottom, 4)
                         }
-                        .padding(.top, 8)
-                        .padding(.bottom, 8)
                         
                         // Grid de categorias em 2 colunas
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
@@ -113,6 +137,9 @@ struct ContentView: View {
                     }
                 }
                 .navigationBarHidden(true)
+                .onAppear {
+                    carregarVersiculoDoDia()
+                }
             }
             .tag(0)
             
@@ -136,6 +163,22 @@ struct ContentView: View {
         case "Paz": return "dove.fill"
         case "Perdão": return "heart.slash.fill"
         default: return "book.circle.fill"
+        }
+    }
+    
+    private func carregarVersiculoDoDia() {
+        // Usar uma seed baseada na data para ser consistente durante o dia
+        let hoje = Calendar.current.startOfDay(for: Date())
+        let seed = Int(hoje.timeIntervalSince1970)
+        
+        // Gerar número aleatório baseado na data
+        srand48(seed)
+        let randomIndex = Int(drand48() * Double(viewModel.todosVersiculos.count))
+        
+        if randomIndex < viewModel.todosVersiculos.count {
+            versiculoDoDia = viewModel.todosVersiculos[randomIndex]
+        } else if !viewModel.todosVersiculos.isEmpty {
+            versiculoDoDia = viewModel.todosVersiculos.first
         }
     }
 }

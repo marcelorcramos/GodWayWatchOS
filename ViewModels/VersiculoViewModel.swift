@@ -1,13 +1,15 @@
 import Foundation
 import Combine
-import WatchKit // Para feedback tátil
+import WatchKit
 
 class VersiculoViewModel: ObservableObject {
     @Published var categorias: [String] = []
     @Published var versiculosPorCategoria: [String: [Versiculo]] = [:]
     @Published var favoritos: [Versiculo] = []
     
-    private var todosVersiculos: [Versiculo] = []
+    // Tornar esta propriedade pública para o ContentView acessar
+    private(set) var todosVersiculos: [Versiculo] = []  // ← AGORA É PÚBLICA (só leitura)
+    
     private let jsonManager = JSONManager.shared
     private let userDefaults = UserDefaults.standard
     
@@ -38,12 +40,9 @@ class VersiculoViewModel: ObservableObject {
     }
     
     func favoritar(_ versiculo: Versiculo) {
-        // Verifica se já não está favoritado
         if !favoritos.contains(where: { $0.id == versiculo.id }) {
             favoritos.append(versiculo)
             jsonManager.salvarFavoritos(favoritos)
-            
-            // Feedback tátil
             WKInterfaceDevice.current().play(.click)
         }
     }
@@ -51,8 +50,6 @@ class VersiculoViewModel: ObservableObject {
     func desfavoritar(_ versiculo: Versiculo) {
         favoritos.removeAll { $0.id == versiculo.id }
         jsonManager.salvarFavoritos(favoritos)
-        
-        // Feedback tátil
         WKInterfaceDevice.current().play(.click)
     }
     
@@ -62,11 +59,5 @@ class VersiculoViewModel: ObservableObject {
     
     func buscarVersiculosPorCategoria(_ categoria: String) -> [Versiculo] {
         return versiculosPorCategoria[categoria] ?? []
-    }
-    
-    // MARK: - Método para limpar favoritos (útil para debug)
-    func limparTodosFavoritos() {
-        favoritos.removeAll()
-        jsonManager.salvarFavoritos(favoritos)
     }
 }
