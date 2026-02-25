@@ -8,7 +8,7 @@ class VersiculoViewModel: ObservableObject {
     @Published var favoritos: [Versiculo] = []
     
     // Tornar esta propriedade pública para o ContentView acessar
-    private(set) var todosVersiculos: [Versiculo] = []  // ← AGORA É PÚBLICA (só leitura)
+    private(set) var todosVersiculos: [Versiculo] = []
     
     private let jsonManager = JSONManager.shared
     private let userDefaults = UserDefaults.standard

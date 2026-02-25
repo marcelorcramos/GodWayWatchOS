@@ -111,7 +111,7 @@ struct ContentView: View {
                                             .font(.caption)
                                             .fontWeight(.medium)
                                             .multilineTextAlignment(.center)
-                                            .lineLimit(2)
+                                            .lineLimit(1)
                                             .foregroundColor(.primary)
                                         
                                         Text("\(versiculos.count)")
@@ -155,7 +155,7 @@ struct ContentView: View {
     
     func iconName(for categoria: String) -> String {
         switch categoria {
-        case "Conexão com Deus": return "heart.circle.fill"
+        case "Conexão": return "heart.circle.fill"
         case "Ansiedade": return "exclamationmark.triangle.fill"
         case "Força": return "bolt.shield.fill"
         case "Gratidão": return "hands.sparkles.fill"
