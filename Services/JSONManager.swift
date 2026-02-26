@@ -1,11 +1,10 @@
 import Foundation
 
 class JSONManager {
-    static let shared = JSONManager() // Singleton para facilitar o acesso
+    static let shared = JSONManager()
     
     private init() {}
     
-    // MARK: - Leitura do arquivo de versículos (do bundle)
     func carregarVersiculos() -> [Versiculo] {
         guard let url = Bundle.main.url(forResource: "versiculos", withExtension: "json") else {
             print("Arquivo versiculos.json não encontrado no bundle")
@@ -23,8 +22,6 @@ class JSONManager {
         }
     }
     
-    // MARK: - Gerenciamento de Favoritos (salvos no diretório Documents)
-    
     private func getFavoritosURL() -> URL? {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
@@ -35,7 +32,6 @@ class JSONManager {
     func carregarFavoritos() -> [Versiculo] {
         guard let url = getFavoritosURL(),
               FileManager.default.fileExists(atPath: url.path) else {
-            // Se o arquivo não existe, retorna lista vazia
             return []
         }
         
@@ -56,7 +52,7 @@ class JSONManager {
         do {
             let favoritosData = FavoritosData(favoritos: favoritos)
             let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted // Para o JSON ficar legível
+            encoder.outputFormatting = .prettyPrinted
             let data = try encoder.encode(favoritosData)
             try data.write(to: url)
             print("Favoritos salvos em: \(url.path)")
@@ -65,7 +61,6 @@ class JSONManager {
         }
     }
     
-    // MARK: - Método para debug (opcional)
     func printCaminhoFavoritos() {
         if let url = getFavoritosURL() {
             print("Arquivo de favoritos: \(url.path)")

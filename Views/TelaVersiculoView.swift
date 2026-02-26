@@ -12,10 +12,10 @@ struct TelaVersiculoView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                // Header com gradiente
+                // Header
                 VStack(spacing: 8) {
                     ZStack {
-                        // Efeito de brilho pulsante
+                        // Efeito de brilho
                         Circle()
                             .fill(corTema.opacity(0.3))
                             .frame(width: 80, height: 80)
@@ -109,7 +109,7 @@ struct TelaVersiculoView: View {
                         )
                 )
                 
-                // Botão Favoritar animado
+                // Botão Favoritar
                 Button(action: toggleFavorito) {
                     HStack {
                         Image(systemName: isFavorito ? "heart.fill" : "heart")
@@ -163,7 +163,6 @@ struct TelaVersiculoView: View {
             mostrarAlerta = true
         }
         
-        // Feedback tátil
         WKInterfaceDevice.current().play(isFavorito ? .success : .click)
     }
     

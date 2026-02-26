@@ -97,7 +97,6 @@ struct TelaFavoritosView: View {
                                     .buttonStyle(PlainButtonStyle())
                                 }
                                 
-                                // CORREÇÃO AQUI: Adicionado o parâmetro corTema
                                 NavigationLink(destination: TelaVersiculoView(
                                     versiculo: versiculo,
                                     viewModel: viewModel,

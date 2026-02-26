@@ -7,7 +7,6 @@ class VersiculoViewModel: ObservableObject {
     @Published var versiculosPorCategoria: [String: [Versiculo]] = [:]
     @Published var favoritos: [Versiculo] = []
     
-    // Tornar esta propriedade pública para o ContentView acessar
     private(set) var todosVersiculos: [Versiculo] = []
     
     private let jsonManager = JSONManager.shared
@@ -18,22 +17,17 @@ class VersiculoViewModel: ObservableObject {
     }
     
     func carregarDados() {
-        // Carrega versículos do JSON no bundle
         todosVersiculos = jsonManager.carregarVersiculos()
         
-        // Carrega favoritos do JSON no Documents
         favoritos = jsonManager.carregarFavoritos()
-        
-        // Organiza por categoria
+
         organizarPorCategoria()
     }
     
     private func organizarPorCategoria() {
-        // Extrai categorias únicas
         let categoriasSet = Set(todosVersiculos.map { $0.categoria })
         categorias = Array(categoriasSet).sorted()
         
-        // Agrupa versículos por categoria
         for categoria in categorias {
             versiculosPorCategoria[categoria] = todosVersiculos.filter { $0.categoria == categoria }
         }

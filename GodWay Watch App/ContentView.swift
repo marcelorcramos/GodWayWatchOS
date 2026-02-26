@@ -22,7 +22,7 @@ struct ContentView: View {
             NavigationStack {
                 ScrollView {
                     VStack(spacing: 16) {
-                        // Header - Título GODWAY
+                        // Header
                         Text("GODWAY")
                             .font(.title2)
                             .fontWeight(.bold)
@@ -73,7 +73,7 @@ struct ContentView: View {
                             .padding(.bottom, 4)
                         }
                         
-                        // Grid de categorias em 2 colunas
+                        // Grid de categorias
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                             ForEach(viewModel.categorias, id: \.self) { categoria in
                                 let versiculos = viewModel.buscarVersiculosPorCategoria(categoria)
@@ -167,7 +167,6 @@ struct ContentView: View {
     }
     
     private func carregarVersiculoDoDia() {
-        // Usar uma seed baseada na data para ser consistente durante o dia
         let hoje = Calendar.current.startOfDay(for: Date())
         let seed = Int(hoje.timeIntervalSince1970)
         
