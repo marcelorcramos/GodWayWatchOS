@@ -1,3 +1,4 @@
+//Leitura e escrita de ficheiros JSON
 import Foundation
 
 class JSONManager {

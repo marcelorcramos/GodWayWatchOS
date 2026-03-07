@@ -1,3 +1,4 @@
+//Ecrã principal
 import SwiftUI
 
 struct ContentView: View {
@@ -7,7 +8,7 @@ struct ContentView: View {
     
     // Cores temáticas para cada categoria
     let categoriaCores: [String: Color] = [
-        "Conexão com Deus": .purple,
+        "Conexão": .purple,
         "Ansiedade": .orange,
         "Força": .red,
         "Gratidão": .green,

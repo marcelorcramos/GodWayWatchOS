@@ -1,3 +1,4 @@
+//Lógica de negócio
 import Foundation
 import Combine
 import WatchKit

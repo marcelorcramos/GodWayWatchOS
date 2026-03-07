@@ -1,3 +1,4 @@
+//Estrutura de dados
 import Foundation
 
 struct Versiculo: Identifiable, Codable{

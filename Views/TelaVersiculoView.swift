@@ -1,3 +1,4 @@
+//Detalhe do versículo
 import SwiftUI
 import WatchKit
 

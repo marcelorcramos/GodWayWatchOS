@@ -1,3 +1,4 @@
+//Ecrã de favoritos
 import SwiftUI
 
 struct TelaFavoritosView: View {

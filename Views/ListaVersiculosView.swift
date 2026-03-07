@@ -1,3 +1,4 @@
+//Lista por categoria
 import SwiftUI
 
 struct ListaVersiculosView: View {
