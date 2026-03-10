@@ -6,7 +6,7 @@
 
 ## 📋 **Descrição do Projeto**
 
-**GodWay** é uma aplicação para Apple Watch desenvolvida em SwiftUI que oferece versículos bíblicos categorizados por emoções e necessidades do dia a dia. O objetivo é proporcionar conforto espiritual rápido e acessível diretamente no pulso do utilizador.
+**GodWay** é uma aplicação para Apple Watch desenvolvida em SwiftUI que oferece versículos bíblicos categorizados por emoções e necessidades do dia a dia. Contendo um versículo diario automatico. O objetivo é proporcionar conforto espiritual rápido e acessível diretamente no pulso do utilizador.
 
 ---
 
